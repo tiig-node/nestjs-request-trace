@@ -9,7 +9,7 @@ Middleware for managing X-Request-Id and X-Correlation-Id headers in NestJS
 # Usage
 
 ```typescript
-import { RequestIdMiddleware, CorrelationIdMiddleware } from "@eropple/nestjs-correlation-id";
+import { RequestIdMiddleware, CorrelationIdMiddleware } from "@npkgdev/nestjs-request-trace";
 
 async function bootstrap() {
   const app: INestApplication = /* ... */
