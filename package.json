@@ -1,0 +1,70 @@
+{
+  "name": "@npkgdev/nestjs-request-trace",
+  "version": "1.0.0",
+  "description": "Middleware for managing X-Request-Id and X-Correlation-Id headers in NestJS",
+  "author": "Douglas de Paula Natalli",
+  "license": "MIT",
+  "url": "https://github.com/npkgdev/nestjs-request-trace#readme",
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.json",
+    "format": "prettier --write \"lib/**/*.ts\"",
+    "lint": "eslint \"lib/**/*.ts\" --fix",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public",
+    "prepublish:next": "npm run build",
+    "publish:next": "npm publish --access public --tag next",
+    "test:e2e": "jest --config ./tests/jest-e2e.json --runInBand",
+    "test:e2e:dev": "jest --config ./tests/jest-e2e.json --runInBand --watch",
+    "prepare": "husky install",
+    "prerelease": "npm run build",
+    "release": "npx semantic-release"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "16.2.3",
+    "@commitlint/config-angular": "16.2.3",
+    "@nestjs/common": "8.4.4",
+    "@nestjs/testing": "8.4.4",
+    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/commit-analyzer": "9.0.2",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/github": "8.0.2",
+    "@semantic-release/npm": "9.0.1",
+    "@semantic-release/release-notes-generator": "10.0.3",
+    "@types/express": "4.17.13",
+    "@types/jest": "27.4.1",
+    "@types/node": "17.0.23",
+    "@types/supertest": "2.0.12",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "5.19.0",
+    "@typescript-eslint/parser": "5.19.0",
+    "eslint": "8.13.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "husky": "7.0.4",
+    "jest": "27.5.1",
+    "lint-staged": "12.3.7",
+    "prettier": "2.6.2",
+    "reflect-metadata": "0.1.13",
+    "rimraf": "3.0.2",
+    "rxjs": "7.5.5",
+    "semantic-release": "19.0.2",
+    "supertest": "6.2.2",
+    "ts-jest": "27.1.4",
+    "typescript": "4.6.3"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^8.0.0",
+    "express": "^4.17.2",
+    "reflect-metadata": "^0.1.13"
+  },
+  "publishConfig": {
+    "@npkgdev:registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npkgdev/nestjs-request-trace"
+  }
+}
