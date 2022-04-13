@@ -1,4 +1,4 @@
-# NestJS request-context
+# NestJS request-trace
 
 [![CI](https://github.com/npkgdev/nestjs-request-trace/actions/workflows/ci.yml/badge.svg)](https://github.com/npkgdev/nestjs-request-trace/actions/workflows/ci.yml)
 [![GitHub release](https://img.shields.io/github/v/release/npkgdev/nestjs-request-trace.svg)](https://GitHub.com/npkgdev/nestjs-request-trace/releases/)
