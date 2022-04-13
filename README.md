@@ -11,12 +11,15 @@ Middleware for managing X-Request-Id and X-Correlation-Id headers in NestJS
 ```typescript
 import { RequestIdMiddleware, CorrelationIdMiddleware } from "@npkgdev/nestjs-request-trace";
 
-async function bootstrap() {
-  const app: INestApplication = /* ... */
+export class AppModule implements OnModuleInit {
+  public async onModuleInit (): Promise<void> { }
 
-  app.use(RequestIdMiddleware());
-  app.use(CorrelationIdMiddleware());
-
-  await app.listen(3000);
+  configure (consumer: MiddlewareConsumer): void {
+    consumer
+      .apply(CorrelationIdMiddleware)
+      .forRoutes("*")
+      .apply(RequestIdMiddleware)
+      .forRoutes("*");
+  }
 }
 ```
